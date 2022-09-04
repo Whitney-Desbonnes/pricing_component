@@ -1,0 +1,215 @@
+@import url('https://fonts.google.com/specimen/Montserrat');
+
+$very-light-blue: hsl(240, 78%, 98%);
+$light-blue: hsl(234, 14%, 74%);
+$light-gray-blue: hsl(233, 13%, 49%);
+$dark-gray-blue: hsl(232, 13%, 33%);
+$linear-gradient: hsl(236, 72%, 79%), hsl(237, 63%, 64%);
+$violet: hsl(237, 63%, 64%);
+
+body {
+    font-size: 62,5%;
+    font-size: 1.2rem;
+    color: $light-gray-blue;
+    background-color: $very-light-blue;
+    font-weight: 600;
+    
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-top: 30px;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.details {
+    font-size: 1rem;
+}
+
+// SECTION PRIX
+.prix {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    padding: 50px 10px;
+}
+
+// TITRE
+.prix__title {
+    margin-bottom: 50px;
+    .tarifs {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .periode {
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        // https://www.youtube.com/watch?v=gzCUq_VQ7Y8
+        .toggle {
+            position: relative;
+            width: 50px;
+            height: 25px;
+            border-radius: 25px;
+            background: linear-gradient(to right, $linear-gradient);
+            margin: 0 15px;
+
+            .indicator {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                background: #ffffff;
+                transform: scale(0.7);
+                box-shadow: 0 0 5px #888888;
+                transition: 0.5s;
+                cursor: pointer;
+            }
+
+            
+        }
+
+        #toggle.active {
+            .indicator {
+                left: 25px;
+            }
+        }
+    }
+}
+
+// FORMULES
+.prix__formules {
+
+    // basique et premium
+    .bas, .pre {
+       background-color: #fff;
+       padding: 25px;
+       border-radius: 10px;
+       box-shadow: 0 0 15px #c4c4c4;
+       max-width: 350px;
+       margin: 0 auto 30px;
+
+        .price {
+            color: $dark-gray-blue;
+            border-bottom: 1px solid $light-blue;
+            padding: 20px 0;
+        }
+        
+        .details {
+            border-bottom: 1px solid $light-blue;
+            padding: 10px;
+        }
+
+        span {
+            display: block;
+        }
+        .hiden {
+            display: none;
+        }
+        a {
+            background: linear-gradient(to right, $linear-gradient);
+            color: #fff;
+            position: relative;
+            z-index: 0;
+        }
+
+        a::before {
+            background: linear-gradient(to left, #90f0c8, #116956);
+            border-radius: inherit;
+            content: '';
+            display: block;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.5s;
+        }
+
+        a:hover::before {
+           opacity: 1
+        }
+    }
+
+    // professionnel
+    .pro {
+        background: linear-gradient(150deg, $linear-gradient);
+        padding: 25px;
+        border-radius: 10px;
+        color: #fff;
+        box-shadow: 0 0 15px #c4c4c4;
+        max-width: 350px;
+        margin: 0 auto 30px;
+
+        .price {
+            border-bottom: 1px solid $very-light-blue;
+            padding: 20px 0;
+        }
+
+        .details {
+            border-bottom: 1px solid $very-light-blue;
+            padding: 10px;
+        }
+
+        span {
+            display: block;
+        }
+        .hiden {
+            display: none;
+        }
+
+        a {
+            background-color: #fff;
+            color: $violet;
+            transition: 0.5s;
+        }
+
+        a:hover {
+            background-color: #21806b;
+            color: #fff;
+        }
+     }
+
+}
+
+@media (min-width: 900px) {
+
+    .prix__title {
+        margin-bottom: 100px;
+    }
+
+    .prix__formules {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+
+        .bas, .pre {
+            margin: 0;
+            width: 350px;
+        }
+        .pro {
+            transform: scale(1.07);
+            margin: 0;
+            width: 350px;
+        }
+    }
+}
+

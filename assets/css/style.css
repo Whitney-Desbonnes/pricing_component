@@ -1,0 +1,217 @@
+@import url("https://fonts.google.com/specimen/Montserrat");
+body {
+  font-size: 62,5%;
+  font-size: 1.2rem;
+  color: #6d708d;
+  background-color: #f6f6fe;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-top: 30px;
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.details {
+  font-size: 1rem;
+}
+
+.prix {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  padding: 50px 10px;
+}
+
+.prix__title {
+  margin-bottom: 50px;
+}
+
+.prix__title .tarifs {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.prix__title .periode {
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.prix__title .periode .toggle {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  border-radius: 25px;
+  background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  margin: 0 15px;
+}
+
+.prix__title .periode .toggle .indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #ffffff;
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+  -webkit-box-shadow: 0 0 5px #888888;
+          box-shadow: 0 0 5px #888888;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.prix__title .periode #toggle.active .indicator {
+  left: 25px;
+}
+
+.prix__formules .bas, .prix__formules .pre {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 15px #c4c4c4;
+          box-shadow: 0 0 15px #c4c4c4;
+  max-width: 350px;
+  margin: 0 auto 30px;
+}
+
+.prix__formules .bas .price, .prix__formules .pre .price {
+  color: #494c5f;
+  border-bottom: 1px solid #b3b5c6;
+  padding: 20px 0;
+}
+
+.prix__formules .bas .details, .prix__formules .pre .details {
+  border-bottom: 1px solid #b3b5c6;
+  padding: 10px;
+}
+
+.prix__formules .bas span, .prix__formules .pre span {
+  display: block;
+}
+
+.prix__formules .bas .hiden, .prix__formules .pre .hiden {
+  display: none;
+}
+
+.prix__formules .bas a, .prix__formules .pre a {
+  background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  color: #fff;
+  position: relative;
+  z-index: 0;
+}
+
+.prix__formules .bas a::before, .prix__formules .pre a::before {
+  background: -webkit-gradient(linear, right top, left top, from(#90f0c8), to(#116956));
+  background: linear-gradient(to left, #90f0c8, #116956);
+  border-radius: inherit;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.prix__formules .bas a:hover::before, .prix__formules .pre a:hover::before {
+  opacity: 1;
+}
+
+.prix__formules .pro {
+  background: linear-gradient(150deg, #a3a8f0, #696fdd);
+  padding: 25px;
+  border-radius: 10px;
+  color: #fff;
+  -webkit-box-shadow: 0 0 15px #c4c4c4;
+          box-shadow: 0 0 15px #c4c4c4;
+  max-width: 350px;
+  margin: 0 auto 30px;
+}
+
+.prix__formules .pro .price {
+  border-bottom: 1px solid #f6f6fe;
+  padding: 20px 0;
+}
+
+.prix__formules .pro .details {
+  border-bottom: 1px solid #f6f6fe;
+  padding: 10px;
+}
+
+.prix__formules .pro span {
+  display: block;
+}
+
+.prix__formules .pro .hiden {
+  display: none;
+}
+
+.prix__formules .pro a {
+  background-color: #fff;
+  color: #696fdd;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.prix__formules .pro a:hover {
+  background-color: #21806b;
+  color: #fff;
+}
+
+@media (min-width: 900px) {
+  .prix__title {
+    margin-bottom: 100px;
+  }
+  .prix__formules {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: relative;
+  }
+  .prix__formules .bas, .prix__formules .pre {
+    margin: 0;
+    width: 350px;
+  }
+  .prix__formules .pro {
+    -webkit-transform: scale(1.07);
+            transform: scale(1.07);
+    margin: 0;
+    width: 350px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
